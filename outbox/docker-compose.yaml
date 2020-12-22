@@ -91,7 +91,7 @@ services:
      - STRIMZI_TRACING=jaeger
     command: /opt/kafka/kafka_connect_run.sh
   order-service:
-    image: debezium-examples/outbox-order-service:${DEBEZIUM_VERSION}
+    image: quarkus/order-service-quarkus-jvm
     build:
       context: order-service
       dockerfile: src/main/docker/Dockerfile.${QUARKUS_BUILD:-jvm}
